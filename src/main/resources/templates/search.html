@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>musicsearch</title>
 </head>
 <body>
-<form action="http://localhost:8080/">
-    <input type="text" music="searchmusic" formmethod="post">
-    <button >검색</button>
+<h1>노래 검색</h1>
+<form th:action="@{/search-music}" method="GET">
+    <label for="songTitle">노래 제목:</label>
+    <input type="text" id="songTitle" name="track" required>
+    <br>
+    <input type="submit" value="검색">
 </form>
 
 </body>
